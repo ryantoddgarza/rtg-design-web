@@ -1,0 +1,25 @@
+{
+  "name": "rtg-design-web",
+  "version": "0.0.0",
+  "description": "Web design system for my personal digital properties.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryantoddgarza/rtg-design-web.git"
+  },
+  "author": "Ryan Todd Garza <ryantoddgarza@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryantoddgarza/rtg-design-web/issues"
+  },
+  "homepage": "https://github.com/ryantoddgarza/rtg-design-web#readme",
+  "scripts": {
+    "format": "sh ./scripts/format.sh",
+    "lint": "sh ./scripts/lint.sh",
+    "prettier": "sh ./scripts/prettier.sh"
+  },
+  "devDependencies": {
+    "@bitpas/eslint-config": "^0.6.1",
+    "eslint": "^8.23.1",
+    "prettier": "^2.7.1"
+  }
+}
