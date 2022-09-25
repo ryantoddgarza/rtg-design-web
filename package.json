@@ -4,14 +4,11 @@
   "description": "Web design system for my personal digital properties.",
   "files": [
     "scripts",
-    "src/stylesheets/rtgds.scss",
-    "src/stylesheets/tokens",
-    "src/stylesheets/functions",
-    "src/stylesheets/mixins",
+    "src/styles",
     "README.md"
   ],
   "exports": {
-    "sass": "./src/stylesheets/rtgds.scss"
+    "sass": "./src/styles/rtgds.scss"
   },
   "repository": {
     "type": "git",
