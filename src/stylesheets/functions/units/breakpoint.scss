@@ -1,0 +1,5 @@
+@use "../../tokens/system" as *;
+
+@function breakpoint($value) {
+  @return map-get($system, "breakpoint", $value);
+}
