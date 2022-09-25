@@ -7,6 +7,7 @@
     "src/stylesheets/rtgds.scss",
     "src/stylesheets/tokens",
     "src/stylesheets/functions",
+    "src/stylesheets/mixins",
     "README.md"
   ],
   "exports": {
