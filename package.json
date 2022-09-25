@@ -2,6 +2,15 @@
   "name": "rtg-design-web",
   "version": "0.1.0",
   "description": "Web design system for my personal digital properties.",
+  "files": [
+    "scripts",
+    "src/stylesheets/rtgds.scss",
+    "src/stylesheets/tokens",
+    "README.md"
+  ],
+  "exports": {
+    "sass": "./src/stylesheets/rtgds.scss"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ryantoddgarza/rtg-design-web.git"
