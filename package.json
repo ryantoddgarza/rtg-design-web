@@ -4,7 +4,7 @@
   "description": "Web design system for my personal digital properties.",
   "files": [
     "scripts",
-    "src/styles",
+    "src",
     "README.md"
   ],
   "exports": {
