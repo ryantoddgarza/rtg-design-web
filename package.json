@@ -8,7 +8,7 @@
     "README.md"
   ],
   "exports": {
-    "sass": "./src/styles/rtgds.scss"
+    "./sass/": "./src/styles/"
   },
   "repository": {
     "type": "git",
