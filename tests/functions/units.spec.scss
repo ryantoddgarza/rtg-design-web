@@ -1,0 +1,18 @@
+@use "true" as *;
+@use "../../src/styles/functions" as *;
+
+@include describe("units()") {
+  @include it(
+    "Should return a `spacing-base` multiple in pixels given an integer."
+  ) {
+    @include assert-equal(units(1), 8px);
+  }
+}
+
+@include describe("units()") {
+  @include it(
+    "Should return a `spacing-base` multiple in pixels given a float."
+  ) {
+    @include assert-equal(units(1.5), 12px);
+  }
+}

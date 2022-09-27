@@ -1,0 +1,5 @@
+@use "../tokens/system" as *;
+
+@function units($value) {
+  @return map-get($system, "spacing-base") * $value;
+}
