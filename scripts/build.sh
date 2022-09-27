@@ -23,7 +23,7 @@ prepend_to_file() {
 # Build
 
 build_style_tokens() {
-  tokens_dir='src/stylesheets/tokens'
+  tokens_dir='src/styles/tokens'
   mkdir -p "$tokens_dir"
 
   yaml_to_json() {
@@ -46,6 +46,7 @@ build_style_tokens() {
 
   yaml_files=(
     'node_modules/rtg-design/src/tokens/system.yaml'
+    'node_modules/rtg-design/src/tokens/theme.yaml'
   )
 
   for file in ${yaml_files[@]}
@@ -55,6 +56,7 @@ build_style_tokens() {
 
   json_files=(
     "$tokens_dir/system.json"
+    "$tokens_dir/theme.json"
   )
 
   for file in ${json_files[@]}

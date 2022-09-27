@@ -1,0 +1,11 @@
+{
+  "breakpoint": {
+    "phone": 40,
+    "phone-lg": 60,
+    "tablet": 80,
+    "tablet-lg": 110,
+    "desktop": 128,
+    "desktop-lg": 150,
+    "widescreen": 175
+  }
+}
