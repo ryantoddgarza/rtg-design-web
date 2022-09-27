@@ -1,5 +1,7 @@
-@use "../tokens/system" as *;
+@use "../tokens/theme" as *;
+@use "./units" as *;
 
 @function breakpoint($value) {
-  @return map-get($system, "breakpoint", $value);
+  $bp-val: map-get($theme, "breakpoint", $value);
+  @return units($bp-val);
 }
