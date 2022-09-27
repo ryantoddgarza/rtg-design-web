@@ -1,6 +1,6 @@
 {
   "name": "rtg-design-web",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Web design system for my personal digital properties.",
   "files": [
     "scripts",
