@@ -16,7 +16,23 @@ Compile your project's CSS from the rtg-design-web source SASS.
 
 ## Using design tokens
 
-### Breakpoint tokens
+### Spacing units
+
+Spacing unit tokens are based on multiples of 8px.
+
+#### Spacing unit tokens
+
+**Any** numeric token is supported.
+
+#### Using spacing unit tokens
+
+| Context  | Usage          | Example             |
+| -------- | -------------- | ------------------- |
+| function | `units(token)` | `padding: units(2)` |
+
+### Breakpoints
+
+#### Breakpoint tokens
 
 | Token        | Value  |
 | ------------ | ------ |
@@ -30,10 +46,10 @@ Compile your project's CSS from the rtg-design-web source SASS.
 
 #### Using breakpoint tokens
 
-| Context  | Usage               | Example                                     |
-| -------- | ------------------- | ------------------------------------------- |
-| function | `breakpoint(token)` | `@media (min-width: breakpoint('desktop'))` |
-| mixin    | `at-media(token)`   | `@include at-media('desktop')`              |
+| Context  | Usage               | Example                           |
+| -------- | ------------------- | --------------------------------- |
+| function | `breakpoint(token)` | `max-width: breakpoint('tablet')` |
+| mixin    | `at-media(token)`   | `@include at-media('desktop')`    |
 
 ## Contributing
 
