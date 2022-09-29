@@ -1,0 +1,20 @@
+@use "true" as *;
+@use "../../src/styles/functions" as *;
+
+@include describe("units()") {
+  @include it("Returns a spacing-base multiple given an integer.") {
+    $test: units(1);
+    $expect: 8px;
+    @include assert-equal($test, $expect);
+  }
+  @include it("Returns a spacing-base multiple given a float.") {
+    $test: units(1.5);
+    $expect: 12px;
+    @include assert-equal($test, $expect);
+  }
+  @include it("Returns a spacing-base multiple given a string.") {
+    $test: units("1");
+    $expect: 8px;
+    @include assert-equal($test, $expect);
+  }
+}

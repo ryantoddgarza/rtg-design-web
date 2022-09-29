@@ -1,8 +1,0 @@
-@use "true" as *;
-@use "../../src/styles/functions" as *;
-
-@include describe("breakpoint()") {
-  @include it("Should return a theme value in pixels given an input token.") {
-    @include assert-equal(breakpoint("phone"), 320px);
-  }
-}

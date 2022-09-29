@@ -1,0 +1,18 @@
+@use "true" as *;
+@use "../../src/styles/functions" as *;
+
+// Enable error states in unit testing
+$error-output-override: true;
+
+@include describe("breakpoint()") {
+  @include it("Returns a system value given a theme token.") {
+    $test: breakpoint("phone");
+    $expect: 320px;
+    @include assert-equal($test, $expect);
+  }
+  @include it("Returns an error given a non-token string.") {
+    $test: breakpoint("foo");
+    $expect: "Error: `foo` is not a valid breakpoint token.";
+    @include assert-equal($test, $expect);
+  }
+}
