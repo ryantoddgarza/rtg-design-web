@@ -1,7 +1,16 @@
+@use "sass:map";
 @use "../tokens/theme" as *;
 @use "./units" as *;
+@use "./error" as *;
 
 @function breakpoint($value) {
+  $has-token: map.has-key($theme, "breakpoint", $value);
+
+  @if not $has-token {
+    @return error("`#{$value}` is not a valid breakpoint token.");
+  }
+
   $bp-val: map-get($theme, "breakpoint", $value);
+
   @return units($bp-val);
 }
