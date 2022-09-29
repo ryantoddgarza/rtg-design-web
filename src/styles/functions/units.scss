@@ -1,5 +1,12 @@
+@use "sass:meta";
+@use "sass:string";
+@use "./to-number" as *;
 @use "../tokens/system" as *;
 
 @function units($value) {
+  @if meta.type-of($value) == "string" {
+    $value: to-number($value);
+  }
+
   @return map-get($system, "spacing-base") * $value;
 }
