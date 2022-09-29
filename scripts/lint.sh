@@ -1,3 +1,4 @@
-set -e
+#!/bin/bash
 
-eslint .
+npm run prettier
+npm run lint:js

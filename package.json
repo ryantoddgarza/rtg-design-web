@@ -21,10 +21,13 @@
   },
   "homepage": "https://github.com/ryantoddgarza/rtg-design-web#readme",
   "scripts": {
-    "build": "sh ./scripts/build.sh",
-    "format": "sh ./scripts/format.sh",
-    "lint": "sh ./scripts/lint.sh",
-    "prettier": "sh ./scripts/prettier.sh",
+    "build": ". ./scripts/build.sh",
+    "format": ". ./scripts/format.sh",
+    "lint": ". ./scripts/lint.sh",
+    "lint:js": ". ./scripts/lint-js.sh",
+    "lint:js:fix": ". ./scripts/lint-js-fix.sh",
+    "prettier": ". ./scripts/prettier.sh",
+    "prettier:fix": ". ./scripts/prettier-fix.sh",
     "test": ". ./scripts/test.sh"
   },
   "devDependencies": {
