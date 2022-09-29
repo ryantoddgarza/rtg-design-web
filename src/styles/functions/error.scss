@@ -1,0 +1,9 @@
+$error-output-override: false !default;
+
+@function error($message, $override: $error-output-override) {
+  @if $override {
+    @return "Error: #{$message}";
+  }
+
+  @error "#{$message}";
+}
