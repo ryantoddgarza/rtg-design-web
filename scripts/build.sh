@@ -37,13 +37,14 @@ build_style_tokens() {
     src="$1"
     filename=$(get_filename "$src")
 
-    json-to-scss "$src" "$tokens_dir/_$filename.scss" --p="\$$filename: "
-    prepend_to_file "$tokens_dir/_$filename.scss" "$no_edit_msg"
+    json-to-scss "$src" "$tokens_dir/$filename.scss" --p="\$$filename: "
+    prepend_to_file "$tokens_dir/$filename.scss" "$no_edit_msg"
 
-    json-to-scss "$src" "$tokens_dir/_$filename-vars.scss" --p="\$$filename-" --fk
-    prepend_to_file "$tokens_dir/_$filename-vars.scss" "$no_edit_msg"
+    json-to-scss "$src" "$tokens_dir/$filename-vars.scss" --p="\$$filename-" --fk
+    prepend_to_file "$tokens_dir/$filename-vars.scss" "$no_edit_msg"
   }
 
+  # Convert YAML to JSON
   yaml_files=(
     'node_modules/rtg-design/src/tokens/system.yaml'
     'node_modules/rtg-design/src/tokens/theme.yaml'
@@ -54,6 +55,7 @@ build_style_tokens() {
     yaml_to_json "$file"
   done
 
+  # Convert JSON to SASS
   json_files=(
     "$tokens_dir/system.json"
     "$tokens_dir/theme.json"
@@ -63,6 +65,26 @@ build_style_tokens() {
   do
     json_to_scss "$file"
   done
+
+  # Build SASS tokens index file
+  sass_token_index="$tokens_dir/_index.scss"
+  touch "$sass_token_index"
+  > "$sass_token_index"
+
+  sass_files=(
+    "$tokens_dir/system.scss"
+    "$tokens_dir/system-vars.scss"
+    "$tokens_dir/theme.scss"
+    "$tokens_dir/theme-vars.scss"
+  )
+
+  for file in ${sass_files[@]}
+  do
+    line="@forward \"$(basename $file)\";"
+    prepend_to_file "$sass_token_index" "$line"
+  done
+
+  prepend_to_file "$sass_token_index" "$no_edit_msg"
 }
 
 main() {
