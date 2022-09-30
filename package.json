@@ -15,7 +15,7 @@
     "url": "git+https://github.com/ryantoddgarza/rtg-design-web.git"
   },
   "author": "Ryan Todd Garza <ryantoddgarza@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ryantoddgarza/rtg-design-web/issues"
   },
