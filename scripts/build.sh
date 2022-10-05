@@ -65,26 +65,6 @@ build_style_tokens() {
   do
     json_to_scss "$file"
   done
-
-  # Build SASS tokens index file
-  sass_token_index="$tokens_dir/_index.scss"
-  touch "$sass_token_index"
-  > "$sass_token_index"
-
-  sass_files=(
-    "$tokens_dir/system.scss"
-    "$tokens_dir/system-vars.scss"
-    "$tokens_dir/theme.scss"
-    "$tokens_dir/theme-vars.scss"
-  )
-
-  for file in ${sass_files[@]}
-  do
-    line="@forward \"$(basename $file)\";"
-    prepend_to_file "$sass_token_index" "$line"
-  done
-
-  prepend_to_file "$sass_token_index" "$no_edit_msg"
 }
 
 main() {
