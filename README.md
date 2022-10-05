@@ -11,7 +11,7 @@ Additional design systems:
 Compile your project's CSS from the rtg-design-web source SASS.
 
 ```scss
-@use 'rtg-design-web/sass/rtgds';
+@use 'rtg-design-web';
 ```
 
 ## Using design tokens
