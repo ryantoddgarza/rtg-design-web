@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "../tokens/system" as *;
+@use "../tokens/theme" as *;
+@use "./error" as *;
+
+@function family($value) {
+  $has-token: map.has-key($theme, "font-type", $value) or
+    map.has-key($theme, "font-role", $value);
+
+  @if not $has-token {
+    @return error("`#{$value}` is not a valid font family token.");
+  }
+
+  $token: map-get($theme, "font-type", $value) or
+    map-get($theme, "font-role", $value);
+
+  @return map-get($system, "font-stack", $token);
+}

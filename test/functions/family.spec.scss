@@ -1,0 +1,28 @@
+@use "true" as *;
+@use "../../src/styles/functions" as *;
+
+// Enable error states in unit testing
+$error-output-override: true;
+
+@include describe("family()") {
+  @include it("Returns a system font stack given a theme type token.") {
+    $test: family("sans");
+    $expect: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+    @include assert-equal($test, $expect);
+  }
+  @include it("Returns a system font stack given a theme role token.") {
+    $test: family("heading");
+    $expect: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+    @include assert-equal($test, $expect);
+  }
+  @include it("Returns null given an uninitialized token.") {
+    $test: family("alt");
+    $expect: null;
+    @include assert-equal($test, $expect);
+  }
+  @include it("Returns an error given non-token string.") {
+    $test: family("foo");
+    $expect: "Error: `foo` is not a valid font family token.";
+    @include assert-equal($test, $expect);
+  }
+}
