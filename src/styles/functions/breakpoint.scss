@@ -10,7 +10,7 @@
     @return error("`#{$value}` is not a valid breakpoint token.");
   }
 
-  $bp-val: map-get($theme, "breakpoint", $value);
+  $spacing-multiple: map-get($theme, "breakpoint", $value);
 
-  @return units($bp-val);
+  @return units($spacing-multiple);
 }
