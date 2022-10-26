@@ -7,5 +7,17 @@
     "desktop": 128,
     "desktop-lg": 150,
     "widescreen": 175
+  },
+  "font-type": {
+    "mono": "monospace",
+    "sans": "helvetica",
+    "serif": false
+  },
+  "font-role": {
+    "alt": false,
+    "body": "helvetica",
+    "code": "monospace",
+    "heading": "helvetica",
+    "ui": "helvetica"
   }
 }
